@@ -71,7 +71,7 @@ int serial_init(int index) {
 
 int serial_is_send_enable(int index) {
 	volatile struct h8_3069f_sci *sci = regs[index].sci;
-	return (sco->ssr & H8_3069F_SCI_SSR_TDRE);
+	return (sci->ssr & H8_3069F_SCI_SSR_TDRE);
 }
 
 int serial_send_byte(int index, unsigned char c) {
